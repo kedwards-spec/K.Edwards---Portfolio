@@ -1,0 +1,159 @@
+
+:root {
+  --ink: black;
+  --paper: lightpink;
+  --accent: rgb(237, 103, 150);
+  --accent-light: white;
+  --card: white;
+  --muted: grey;
+  --font-main: "Times New Roman", sans-serif;
+  --page-width: 1050px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-main);
+  line-height: 1.5;
+}
+
+header {
+  background: var(--ink);
+  color: white;
+  padding: 1.5rem 1rem;
+}
+
+.header-inner,
+main,
+footer {
+  width: min(100% - 2rem, var(--page-width));
+  margin-inline: auto;
+}
+
+.site-title {
+  margin: 0;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+}
+
+.tagline {
+  margin-top: 0.25rem;
+  color: var(--accent-light);
+}
+
+nav {
+  background: var(--accent-light);
+}
+
+nav ul {
+  width: min(100% - 2rem, var(--page-width));
+  margin: 0 auto;
+  padding: 0.8rem 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.2rem;
+}
+
+nav a {
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+nav a:hover,
+nav a:focus {
+  text-decoration: underline;
+}
+
+main {
+  padding: 2rem 0 3rem;
+  min-height: 65vh;
+}
+
+.hero,
+.panel,
+.project-card {
+  background: var(--card);
+  border: 1px solid white;
+  border-radius: 14px;
+  padding: clamp(1rem, 3vw, 2rem);
+  margin-bottom: 1.25rem;
+  box-shadow: 0 5px 18px rgb(32 39 53 / 5%);
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+}
+
+h2 {
+  color: var(--accent);
+}
+
+a {
+  color: maroon;
+}
+
+a:focus-visible {
+  outline: 3px solid lightcoral;
+  outline-offset: 3px;
+}
+
+.button-link {
+  display: inline-block;
+  padding: 0.65rem 1rem;
+  border-radius: 8px;
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.button-link:hover {
+  background: maroon;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.profile-id {
+  max-width: 220px;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 2px solid var(--accent-light);
+}
+
+.small-note {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+footer {
+  padding: 1.2rem 0 2rem;
+  color: var(--muted);
+}
+
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  main {
+    padding-top: 1rem;
+  }
+}
